@@ -1517,8 +1517,6 @@ def create_docker_build_script(script_name, container_install_dir, container_ci_
         if target_platform() == "windows":
             if FLAGS.container_memory:
                 baseargs += ["--memory", FLAGS.container_memory]
-        baseargs += ["--memory", "16g"]
-        baseargs += ["--memory-swap", "12g"]
         
         baseargs += ["--cache-from={}".format(k) for k in cachefrommap]
         baseargs += ["."]
@@ -1547,6 +1545,8 @@ def create_docker_build_script(script_name, container_install_dir, container_ci_
             "/workspace/build",
             "--name",
             "tritonserver_builder",
+            "--memory=16g",
+            "--memory-swap=18g"
         ]
 
         if not FLAGS.no_container_interactive:
