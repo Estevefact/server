@@ -1518,7 +1518,7 @@ def create_docker_build_script(script_name, container_install_dir, container_ci_
             if FLAGS.container_memory:
                 baseargs += ["--memory", FLAGS.container_memory]
         baseargs += ["--memory", "16g"]
-        baseargs += ["--memory-swap", "8g"]
+        baseargs += ["--memory-swap", "12g"]
         
         baseargs += ["--cache-from={}".format(k) for k in cachefrommap]
         baseargs += ["."]
