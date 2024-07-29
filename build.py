@@ -1517,7 +1517,7 @@ def create_docker_build_script(script_name, container_install_dir, container_ci_
         if target_platform() == "windows":
             if FLAGS.container_memory:
                 baseargs += ["--memory", FLAGS.container_memory]
-        baseargs += ["--memory", "12g"]
+        baseargs += ["--memory", "16g"]
         baseargs += ["--memory-swap", "8g"]
         
         baseargs += ["--cache-from={}".format(k) for k in cachefrommap]
