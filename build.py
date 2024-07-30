@@ -1545,8 +1545,7 @@ def create_docker_build_script(script_name, container_install_dir, container_ci_
             "/workspace/build",
             "--name",
             "tritonserver_builder",
-            "--memory=16g",
-            "--memory-swap=18g"
+            "--memory=18g",
         ]
 
         if not FLAGS.no_container_interactive:
